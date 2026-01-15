@@ -26,23 +26,52 @@ ln -s "$(pwd)/polish-text" /usr/local/bin/polish-text
 
 ## Configuration
 
-The tool looks for configuration in the following order:
-1. Environment variables: `OPENAI_API_KEY`, `CLAUDE_API_KEY`, `OLLAMA_API_URL`
-2. Config file: `~/.config/polish-text/config`
+The tool automatically detects available AI providers and uses the first available one. Configuration is loaded in this order:
 
-### Example config file
+1. **Environment variables** (highest priority)
+2. **Config file**: `~/.config/polish-text/config`
+3. **Built-in defaults**
+
+### Quick Setup
+
+```bash
+# Create config directory
+mkdir -p ~/.config/polish-text
+
+# Copy example config
+cp config.example ~/.config/polish-text/config
+
+# Edit with your API keys
+nano ~/.config/polish-text/config
+```
+
+### Configuration Options
 
 ```bash
 # ~/.config/polish-text/config
-export OPENAI_API_KEY="your-openai-key"
-export CLAUDE_API_KEY="your-claude-key"
+
+# API Keys (set at least one)
+export OPENAI_API_KEY="sk-..."
+export CLAUDE_API_KEY="sk-ant-..."
+# export OLLAMA_API_URL="http://localhost:11434"  # Optional: remote Ollama
+
+# Default provider (optional - auto-detects if not set)
 export DEFAULT_AI="openai"  # or "claude" or "ollama"
 
 # Model configurations
 openai_model="gpt-4o-mini"
 claude_model="claude-3-5-sonnet-20241022"
 ollama_model="mistral"
+
+# Custom pre-prompt (optional)
+# pre_prompt="Your custom text enhancement instructions..."
 ```
+
+### Auto-Detection
+
+- If only one API key is provided, that provider becomes the default
+- If multiple keys are available, preference order: OpenAI → Claude → Ollama
+- If no API keys but Ollama is running locally, uses Ollama
 
 ## Usage
 
