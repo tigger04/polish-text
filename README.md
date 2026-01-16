@@ -12,31 +12,30 @@ AI-powered text enhancement tool that improves clarity, professionalism, and imp
 
 ## Installation
 
-### Standard Installation
+### Homebrew (Recommended)
+
+```bash
+brew tap tigger04/tap
+brew install polish-text
+```
+
+### Development Installation
+
+For development or manual installation:
 
 ```bash
 # Clone the repository
 git clone https://github.com/tigger04/polish-text.git
 cd polish-text
 
-# Test the installation
+# Run tests
 make test
 
-# Install (auto-detects Homebrew prefix if available)
-make install
+# Install to /usr/local/bin (requires sudo)
+sudo make install
 
-# Or install to custom location
-make install PREFIX=~/.local
-```
-
-### Development Installation
-
-```bash
-# Make executable
-chmod +x polish-text
-
-# Optional: Link to PATH
-ln -s "$(pwd)/polish-text" /usr/local/bin/polish-text
+# Uninstall
+sudo make uninstall
 ```
 
 ## Configuration
