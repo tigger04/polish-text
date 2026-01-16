@@ -10,11 +10,32 @@ AI-powered text enhancement tool that improves clarity, professionalism, and imp
 - Flexible input/output options
 - Automatic context setting and summarization for lengthy messages
 
-## Quick Start
+## Installation
+
+### Homebrew (Recommended)
 
 ```bash
 brew tap tigger04/tap
 brew install polish-text
+```
+
+### Development Installation
+
+For development or manual installation:
+
+```bash
+# Clone the repository
+git clone https://github.com/tigger04/polish-text.git
+cd polish-text
+
+# Run tests
+make test
+
+# Install to /usr/local/bin (requires sudo)
+sudo make install
+
+# Uninstall
+sudo make uninstall
 ```
 
 ## Configuration
@@ -117,25 +138,6 @@ The tool:
 - Emphasizes important messages
 - Adds context and summaries for lengthy content
 - Never adds emojis
-
-## Development Installation
-
-For development or manual installation:
-
-```bash
-# Clone the repository
-git clone https://github.com/tigger04/polish-text.git
-cd polish-text
-
-# Run tests
-make test
-
-# Install to /usr/local/bin (requires sudo)
-sudo make install
-
-# Uninstall
-sudo make uninstall
-```
 
 ## License
 
