@@ -12,11 +12,26 @@ AI-powered text enhancement tool that improves clarity, professionalism, and imp
 
 ## Installation
 
+### Standard Installation
+
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/polish-text.git
+git clone https://github.com/tigger04/polish-text.git
 cd polish-text
 
+# Test the installation
+make test
+
+# Install (auto-detects Homebrew prefix if available)
+make install
+
+# Or install to custom location
+make install PREFIX=~/.local
+```
+
+### Development Installation
+
+```bash
 # Make executable
 chmod +x polish-text
 
